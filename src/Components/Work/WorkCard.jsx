@@ -1,15 +1,15 @@
 import React from 'react'
 import { motion } from "framer-motion"
 
-function WorkCard({ image, link, title, tags, description }) {
+function WorkCard({ image, link, title, tags, description, index }) {
 
   return (
     <div className='h-full w-full overflow-hidden'>
       <motion.div
         className='h-full w-full bg-[#101215] border border-[#373D43] px-4 md:px-8 py-4 rounded-2xl cursor-pointer hover:bg-[#16171b] duration-200'
         onClick={() => window.location.href = link}
-        initial={{ y: "50%", opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ x: index%2 ? "50%" : "-50%", opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
       >

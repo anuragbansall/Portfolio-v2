@@ -59,6 +59,7 @@ function WorkContainer() {
               tags={item.tags}
               description={item.description}
               key={index}
+              index={index}
             />
           ))
         }

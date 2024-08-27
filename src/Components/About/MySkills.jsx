@@ -48,7 +48,7 @@ function MySkills() {
       </div>
 
       <motion.div
-        className="w-full"
+        className="w-full overflow-hidden"
         initial={{ height: 0 }}
         animate={isExpanded ? { height: "auto", margin: "5rem 0 0 0" } : { height: 0 }}
       >

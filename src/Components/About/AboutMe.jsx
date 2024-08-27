@@ -7,6 +7,7 @@ import { SiHackerrank } from "react-icons/si";
 import { SiLeetcode } from "react-icons/si";
 import { IoMdMailUnread } from "react-icons/io";
 import face from "../../assets/Images/face.gif"
+import face2 from "../../assets/Images/face2.gif"
 import resume from "../../assets/Resume/resume.pdf"
 
 function AboutMe() {
@@ -44,7 +45,7 @@ function AboutMe() {
                     <div className='w-full md:w-[30rem] flex flex-col gap-6 bg-[#101215] border border-[#373D43] p-4 md:p-8 rounded-2xl'>
                         <div className='flex flex-col md:flex-row w-full items-center gap-8'>
                             <div className='h-[6rem] w-[6rem] rounded-full bg-zinc-900'>
-                                <img src={face} alt="" className='h-full w-full object-cover' />
+                                <img src={face2} alt="" className='h-full w-full object-cover' />
                             </div>
                             <h2 className='font-semibold text-3xl text-center md:text-4xl overflow-hidden'>Anurag Bansal</h2>
                         </div>
