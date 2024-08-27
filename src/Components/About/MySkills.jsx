@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import IconsMarquee from "../Common/IconsMarquee";
+import { motion } from "framer-motion";
 
 import cpp from "../../assets/Languages-Icons/cpp.png";
 import css from "../../assets/Languages-Icons/css.png";
@@ -13,6 +14,7 @@ import sql from "../../assets/Languages-Icons/sql.png";
 import tailwindcss from "../../assets/Languages-Icons/tailwindcss.png";
 import framermotion from "../../assets/Languages-Icons/framermotion.png";
 import python from "../../assets/Languages-Icons/python.png";
+import IconsContainer from "../Common/IconsContainer";
 
 const iconsPngs = [
   { label: "HTML", icon: html },
@@ -30,20 +32,30 @@ const iconsPngs = [
 ];
 
 function MySkills() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <div className="w-full flex rounded-2xl border border-[#373D43] bg-[#101215] p-8">
-      <div className="min-w-fit px-4 text-nowrap">
-        <p className="text-zinc-500 font-semibold">CURRENTLY USING</p>
-        <p className="text-[2rem] mt-2 font-semibold">
-          Tech I ❤️
-        </p>
+    <div className="w-full rounded-2xl border border-[#373D43] bg-[#101215] p-8">
+      <div className="flex">
+        <div className="min-w-fit px-4 text-nowrap">
+          <p className="text-zinc-500 font-semibold">CURRENTLY USING</p>
+          <p className="text-[2rem] mt-2 font-semibold">Tech I ❤️</p>
+        </div>
+
+        <div className="w-[100%]">
+          <IconsMarquee iconsPngs={iconsPngs} />
+        </div>
       </div>
 
-      <div className="w-[100%]">
-        <IconsMarquee 
-          iconsPngs={iconsPngs}
-        />
-      </div>
+      <motion.div
+        className="w-full"
+        initial={{ height: 0 }}
+        animate={isExpanded ? { height: "auto", margin: "5rem 0 0 0" } : { height: 0 }}
+      >
+        <IconsContainer iconsPngs={iconsPngs} />
+      </motion.div>
+
+      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4">Expand</p>
     </div>
   );
 }
