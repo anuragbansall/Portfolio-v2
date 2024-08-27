@@ -35,8 +35,8 @@ function MySkills() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="w-full rounded-2xl border border-[#373D43] bg-[#101215] p-8">
-      <div className="flex">
+    <div className="w-full rounded-2xl border border-[#373D43] bg-[#101215] p-4 md:p-8">
+      <div className="flex flex-col-reverse md:flex-row gap-y-4">
         <div className="min-w-fit px-4 text-nowrap">
           <p className="text-zinc-500 font-semibold">CURRENTLY USING</p>
           <p className="text-[2rem] mt-2 font-semibold">Tech I ❤️</p>
@@ -55,7 +55,7 @@ function MySkills() {
         <IconsContainer iconsPngs={iconsPngs} />
       </motion.div>
 
-      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4">Expand</p>
+      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4">See Details...</p>
     </div>
   );
 }

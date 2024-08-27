@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom"
 
 function NavBar() {
   return (
-    <div className='w-full flex justify-center items-center py-16'>
-        <div className='flex items-center gap-4 w-fit p-2 border border-[#373D43] rounded-full'>
+    <div className='w-full flex justify-center items-center py-10 sm:py-16'>
+        <div className='flex items-center gap-2 sm:gap-4 w-fit p-2 border border-[#373D43] rounded-full'>
             {
                 [{
                     path: "/",
@@ -19,7 +19,7 @@ function NavBar() {
                     label: "Work"
                 },
             ].map((el, idx) => (
-                    <NavLink to={el.path} key={idx} className='  rounded-full py-1 px-8' style={(e) => (
+                    <NavLink to={el.path} key={idx} className='rounded-full py-1 px-4 sm:px-8' style={(e) => (
                         e.isActive ? {
                             backgroundColor: "#2A2F35",
                             border: "2px solid #373D43",
