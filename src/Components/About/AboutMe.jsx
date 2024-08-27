@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiHackerrank } from "react-icons/si";
 import { SiLeetcode } from "react-icons/si";
+import { IoMdMailUnread } from "react-icons/io";
 import face from "../../assets/Images/face.gif"
 import resume from "../../assets/Resume/resume.pdf"
 
@@ -14,6 +15,11 @@ function AboutMe() {
         {
         label: <FaLinkedin />,
         link: 'https://www.linkedin.com/in/anuragbansall',
+        color: "#0077B5"
+        },
+        {
+        label: <IoMdMailUnread />        ,
+        link: 'mailto:anuragbansalwork@gmail.com',
         color: "#0077B5"
         },
         {
