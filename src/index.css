@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "silka";
+    src: url(./assets/Fonts/silka.woff);
+}
+
+*{
+    font-family: "silka", Arial;
+}
+
+*{
+    overflow-x: hidden;
+}
+
+*::-webkit-scrollbar{
+    width: 2px;
+    background-color: #222222;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #dadada;
+    border-radius: 50px;
+}
