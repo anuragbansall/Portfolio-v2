@@ -55,7 +55,7 @@ function MySkills() {
         <IconsContainer iconsPngs={iconsPngs} />
       </motion.div>
 
-      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4">See Details...</p>
+      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4 select-none">{isExpanded ? "Hide Details..." : "See Details..."}</p>
     </div>
   );
 }
