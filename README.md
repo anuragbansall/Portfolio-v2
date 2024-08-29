@@ -24,7 +24,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://anuragbansal.vercel.app/)
 
-* `Project Showcases`: View detailed information about my projects, including technologies used and * project descriptions.
+* `Project Showcases`: View detailed information about my projects, including technologies used and project descriptions.
 * `Responsive Design`: The portfolio is designed to look great on both desktop and mobile devices.
 * `Interactive Animations`: Leveraging Framer Motion for smooth and engaging animations.
 * `User-Friendly Navigation`: Easy to navigate with a clean and intuitive layout.
