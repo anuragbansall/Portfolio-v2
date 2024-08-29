@@ -37,7 +37,7 @@ function SocialIconsContainer() {
     ]
 
   return (
-    <div className="flex justify-center md:justify-start flex-wrap gap-4">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-4 place-items-center">
       {socialIconsPngs.map((item, index) => (
         <SocialCard
           key={index}
