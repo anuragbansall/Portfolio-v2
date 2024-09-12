@@ -28,7 +28,7 @@ function AboutMe() {
                                 <span onClick={ () =>  window.open(resume, '_blank')} className="cursor-pointer" >
                                     <TiDownload />
                                 </span>
-                                <span onClick={ () =>  window.location.href = 'https://drive.google.com/file/d/1AVp-AdxKYGHhpCBAsNEfNcDv5SQ2J2p6/view?usp=sharing' } className="cursor-pointer" >
+                                <span onClick={ () =>  window.location.href = 'https://drive.google.com/file/d/1y9hkEwEzqWTTLnWYSsLNThauusk-Sl7o/view?usp=sharing' } className="cursor-pointer" >
                                     <FaEye />
                                 </span>
                             </div>
