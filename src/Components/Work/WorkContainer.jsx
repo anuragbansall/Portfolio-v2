@@ -49,7 +49,7 @@ function WorkContainer() {
   ]
 
   return (
-    <div className='grid place-items-center md:grid-cols-2 gap-6'>
+    <div className='columns-[30rem] column-gap'>
         {
           workData.map((item, index) => (
             <WorkCard

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 function WorkCard({ image, link, title, tags, description, index }) {
 
   return (
-    <div className='h-full w-full overflow-hidden'>
+    <div className='h-full w-full overflow-hidden mb-5'>
       <motion.div
         className='h-full w-full bg-[#101215] border border-[#373D43] px-4 md:px-8 py-4 rounded-2xl cursor-pointer hover:bg-[#16171b] duration-200'
         onClick={() => window.location.href = link}
