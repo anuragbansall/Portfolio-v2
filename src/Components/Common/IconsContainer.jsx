@@ -12,7 +12,7 @@ function IconsContainer({iconsPngs}) {
                         icon={item.icon}
                         label={item.label}
                     />
-                    <p className='font-medium text-[#dadada]'>{item.label}</p>
+                    <p className='font-medium dark:text-[#dadada]'>{item.label}</p>
                 </div>
             ))
         }

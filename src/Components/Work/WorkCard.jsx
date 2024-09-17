@@ -6,7 +6,7 @@ function WorkCard({ image, link, title, tags, description, index }) {
   return (
     <div className='h-full w-full overflow-hidden mb-5'>
       <motion.div
-        className='h-full w-full bg-[#101215] border border-[#373D43] px-4 md:px-8 py-4 rounded-2xl cursor-pointer hover:bg-[#16171b] duration-200'
+        className='h-full w-full dark:bg-[#101215] bg-[#EAEAEC] border dark:border-[#373D43] border-[#EEEEEE] px-4 md:px-8 py-4 rounded-2xl cursor-pointer dark:hover:bg-[#16171b] hover:bg-[#EEEEEE] duration-200'
         onClick={() => window.location.href = link}
         initial={{ x: index%2 ? "50%" : "-50%", opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -21,7 +21,7 @@ function WorkCard({ image, link, title, tags, description, index }) {
           <p className='mt-4'>{description}</p>
           <div className='flex flex-wrap gap-x-2 sm:gap-x-4 gap-y-2 mt-6'>
             {tags.map((item, index) => (
-              <span key={index} className='bg-[#35353D] text-[#DADADA] font-medium px-4 py-1 rounded-full capitalize'>
+              <span key={index} className='dark:bg-[#35353D] bg-[#dadada] dark:text-[#DADADA] font-medium px-4 py-1 rounded-full capitalize'>
                 {item}
               </span>
             ))}

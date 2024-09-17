@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Routing from "./utils/Routing"
-// import LocomotiveScroll from 'locomotive-scroll';
-
-// const locomotiveScroll = new LocomotiveScroll();
+import { useThemeContext } from './context/ThemeContext'
 
 function App() {
+
+  const {theme} = useThemeContext()
+  useEffect(() => {
+    document.querySelector('html').classList.remove('dark', 'light')
+    document.querySelector('html').classList.add(theme)
+  })
+
   return (
-    <div>
+    <>
       <Routing />
-    </div>
+    </>
   )
 }
 
