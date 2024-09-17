@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 function ThemeContextProvider({children}){
 
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState('light');
 
     const toggleTheme = ()  => {
         setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
@@ -15,6 +15,17 @@ function ThemeContextProvider({children}){
             toggleTheme,
         }
     ), [theme])
+
+    useEffect(() => {
+        const theme = localStorage.getItem("theme")
+        if(theme){
+            setTheme(theme)
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme)
+    }, [theme])
 
     return(
         <ThemeContext.Provider value={value} >

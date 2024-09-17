@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from "react"
 
 export const ThemeContext = createContext({
-    theme: 'dark',
+    theme: 'light',
     toggleTheme: () => {}
 })
 
