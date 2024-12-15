@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import Routing from "./utils/Routing"
 import { useThemeContext } from './context/ThemeContext'
-import { Analytics } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
-
-  Analytics();
 
   const {theme} = useThemeContext()
   useEffect(() => {
@@ -15,6 +13,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <Routing />
     </>
   )
