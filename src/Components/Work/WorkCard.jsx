@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 function WorkCard({ image, link, title, tags, description, index }) {
   return (
-    <div className="h-full w-full overflow-hidden mb-5">
+    <div className="relative h-full w-full overflow-hidden mb-5">
       <motion.div
-        className="h-full w-full dark:bg-[#101215] bg-[#EAEAEC] border dark:border-[#373D43] border-[#EEEEEE] px-4 md:px-8 py-4 rounded-2xl cursor-pointer dark:hover:bg-[#16171b] hover:bg-[#EEEEEE] duration-200"
+        className="h-full w-full dark:bg-[#101215] bg-[#EAEAEC] border dark:border-[#373D43] border-[#EEEEEE] px-4 md:px-8 py-4 rounded-2xl cursor-pointer dark:hover:bg-[#16171b] hover:bg-[#EEEEEE] duration-200 group relative"
         onClick={() => (window.location.href = link)}
         initial={{ x: index % 2 ? "50%" : "-50%", opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -32,6 +32,7 @@ function WorkCard({ image, link, title, tags, description, index }) {
               </span>
             ))}
           </div>
+          <div className="absolute left-1/2 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-slate-500 dark:via-purple-300 to-transparent w-0 group-hover:w-full transform -translate-x-1/2 transition-all duration-200"></div>
         </div>
       </motion.div>
     </div>
