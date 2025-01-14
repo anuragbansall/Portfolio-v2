@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import IconsMarquee from "../Common/IconsMarquee";
 import { motion } from "framer-motion";
+import IconsContainer from "../Common/IconsContainer";
 
 import cpp from "../../assets/Languages-Icons/cpp.png";
 import css from "../../assets/Languages-Icons/css.png";
@@ -14,13 +15,16 @@ import sql from "../../assets/Languages-Icons/sql.png";
 import tailwindcss from "../../assets/Languages-Icons/tailwindcss.png";
 import framermotion from "../../assets/Languages-Icons/framermotion.png";
 import python from "../../assets/Languages-Icons/python.png";
-import IconsContainer from "../Common/IconsContainer";
+import nodejs from "../../assets/Languages-Icons/node-js.png";
+import expressjs from "../../assets/Languages-Icons/express-js.png";
 
 const iconsPngs = [
   { label: "HTML", icon: html },
   { label: "CSS", icon: css },
   { label: "JavaScript", icon: js },
   { label: "React", icon: reactjs },
+  { label: "Node.js", icon: nodejs },
+  { label: "Express.js", icon: expressjs },
   { label: "Tailwind CSS", icon: tailwindcss },
   { label: "Firebase", icon: firebase },
   { label: "SQL", icon: sql },
@@ -50,12 +54,19 @@ function MySkills() {
       <motion.div
         className="w-full overflow-hidden"
         initial={{ height: 0 }}
-        animate={isExpanded ? { height: "auto", margin: "5rem 0 0 0" } : { height: 0 }}
+        animate={
+          isExpanded ? { height: "auto", margin: "5rem 0 0 0" } : { height: 0 }
+        }
       >
         <IconsContainer iconsPngs={iconsPngs} />
       </motion.div>
 
-      <p onClick={() => setIsExpanded(!isExpanded)} className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4 select-none">{isExpanded ? "Hide Details..." : "See Details..."}</p>
+      <p
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="text-center w-full text-2xl cursor-pointer font-medium text-zinc-500 my-4 select-none"
+      >
+        {isExpanded ? "Hide Details..." : "See Details..."}
+      </p>
     </div>
   );
 }
