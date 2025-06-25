@@ -4,6 +4,31 @@ import WorkCard from "./WorkCard";
 function WorkContainer() {
   const workData = [
     {
+      title: "macOS Web Version",
+      image:
+        "https://github.com/anuragbansall/macos-web/blob/main/public/Product.png?raw=true",
+      link: "https://macos-web-online.vercel.app/",
+      description:
+        "A clean and interactive macOS desktop experience built with React. Features a draggable dock, window system, and smooth UI animations — all in the browser.",
+      tags: ["React.js", "Tailwind CSS"],
+    },
+    {
+      title: "Urnote",
+      image:
+        "https://github.com/anuragbansall/urnote/blob/main/frontend/Screenshot%202025-06-25%20185127.png?raw=true",
+      link: "https://urnote.vercel.app/",
+      description:
+        "UrNote is a smart web app to write, store, and enhance your notes using AI. Organize ideas, expand thoughts, and get AI suggestions—all in one place.",
+      tags: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Gemini",
+      ],
+    },
+    {
       title: "ScreenVerse",
       image:
         "https://github.com/anuragbansall/ScreenVerse/raw/main/public/product.png",
@@ -11,6 +36,33 @@ function WorkContainer() {
       description:
         "ScreenVerse allows users to discover the latest popular and trending movies and TV series. Users can view detailed information, such as descriptions, trailers, where the content is available for streaming, and much more. Additionally, users can explore detailed profiles of their favorite celebrities.",
       tags: ["React.js", "Tailwind CSS", "Redux Toolkit"],
+    },
+    {
+      title: "Sheryinas DSA Tracker",
+      image:
+        "https://github.com/anuragbansall/Sheryians-DSA-Tracker/blob/main/public/Product.png?raw=true",
+      link: "https://sheryians-dsa-tracker.vercel.app/",
+      description:
+        "A web-based DSA sheet focused on JavaScript. View curated questions and solve them directly in the built-in browser code editor—no setup needed.",
+      tags: ["React.js", "Tailwind CSS"],
+    },
+    {
+      title: "Crispify",
+      image:
+        "https://github.com/anuragbansall/Crispify/blob/main/Product.png?raw=true",
+      link: "https://crispify.vercel.app/",
+      description:
+        "Crispify is a simple web app that uses AI to unblur and enhance low-quality images. Just upload your image, and let AI bring out the details",
+      tags: ["React.js", "Tailwind CSS"],
+    },
+    {
+      title: "RapidChat",
+      image:
+        "https://github.com/anuragbansall/RapidChat/blob/main/frontend/Product.png?raw=true",
+      link: "https://rapidchat-1.onrender.com/",
+      description:
+        "RapidChat is a web-based real-time chat app that lets users send and receive messages instantly. Built for speed, simplicity, and smooth communication.",
+      tags: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     },
     {
       title: "FloatDocs",
