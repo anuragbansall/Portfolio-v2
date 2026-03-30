@@ -1,3 +1,4 @@
+import { FiArrowUpRight } from "react-icons/fi";
 import WorkCard from "./WorkCard";
 
 function WorkContainer() {
@@ -136,6 +137,19 @@ function WorkContainer() {
               index={index}
             />
           ))}
+        </div>
+        <div className="mt-8 md:mt-10 flex justify-center">
+          <a
+            href="https://github.com/anuragbansall/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full border border-zinc-300 px-6 py-3 text-sm md:text-base font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[--accent] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+          >
+            View More on GitHub
+            <span className="text-2xl ml-2 text-[var(--accent)]">
+              <FiArrowUpRight />
+            </span>
+          </a>
         </div>
       </section>
     </div>
