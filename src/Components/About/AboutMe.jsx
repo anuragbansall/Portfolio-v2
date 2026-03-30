@@ -104,7 +104,7 @@ function AboutMe() {
             </button>
           </div>
           <a
-            href="mailto:anuragbansalwork@gmail.com"
+            href="mailto:devanuragbansal@gmail.com"
             className="mt-3 h-12 rounded-xl border border-[var(--line)] bg-[var(--surface-strong)] font-medium flex items-center justify-center gap-2"
           >
             Contact Me <FiArrowUpRight />

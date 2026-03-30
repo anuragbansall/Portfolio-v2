@@ -5,6 +5,7 @@ import { SiHackerrank } from "react-icons/si";
 import { SiLeetcode } from "react-icons/si";
 import { IoMdMailUnread } from "react-icons/io";
 import SocialCard from "../Common/SocialCard";
+import { FaXTwitter } from "react-icons/fa6";
 
 function SocialIconsContainer() {
   const socialIconsPngs = [
@@ -17,7 +18,7 @@ function SocialIconsContainer() {
     {
       label: <IoMdMailUnread />,
       title: "Email",
-      link: "mailto:anuragbansalwork@gmail.com",
+      link: "mailto:devanuragbansal@gmail.com",
       color: "#D44638",
     },
     {
@@ -27,16 +28,22 @@ function SocialIconsContainer() {
       color: "#DADADA",
     },
     {
-      label: <SiHackerrank />,
-      title: "HackerRank",
-      link: "https://www.hackerrank.com/devanuragbansal",
-      color: "#2EC866",
-    },
-    {
       label: <SiLeetcode />,
       title: "LeetCode",
       link: "https://leetcode.com/anuragbansall",
       color: "#F8C300",
+    },
+    {
+      label: <FaXTwitter />,
+      title: "Twitter",
+      link: "https://x.com/anuragbansall",
+      color: "#1DA1F2",
+    },
+    {
+      label: <SiHackerrank />,
+      title: "HackerRank",
+      link: "https://www.hackerrank.com/devanuragbansal",
+      color: "#2EC866",
     },
   ];
 
