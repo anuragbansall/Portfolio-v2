@@ -3,21 +3,73 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "silka";
-    src: url(./assets/Fonts/silka.woff);
+  font-family: "silka";
+  src: url(./assets/Fonts/silka.woff);
 }
 
-*{
-    font-family: "silka", Arial;
-    overflow-x: hidden;
+:root {
+  --bg: #f6f4ee;
+  --bg-soft: #efece4;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: #ffffff;
+  --text: #131313;
+  --muted: #5f5a53;
+  --line: rgba(32, 29, 24, 0.12);
+  --accent: #ca5737;
+  --accent-soft: rgba(202, 87, 55, 0.14);
 }
 
-*::-webkit-scrollbar{
-    width: 2px;
-    background-color: #222222;
+html.dark {
+  --bg: #0e1417;
+  --bg-soft: #121b1f;
+  --surface: rgba(20, 28, 33, 0.68);
+  --surface-strong: #172129;
+  --text: #e8ecef;
+  --muted: #99a6ae;
+  --line: rgba(227, 237, 244, 0.14);
+  --accent: #f0a94f;
+  --accent-soft: rgba(240, 169, 79, 0.2);
 }
 
-*::-webkit-scrollbar-thumb{
-    background-color: #dadada;
-    border-radius: 50px;
+* {
+  box-sizing: border-box;
+  font-family: "silka", "Segoe UI", sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(202, 87, 55, 0.08),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 80%,
+      rgba(38, 101, 176, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg-soft) 100%);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(125, 125, 125, 0.45);
+  border-radius: 50px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

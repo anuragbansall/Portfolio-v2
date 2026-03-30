@@ -1,16 +1,18 @@
-import React from 'react'
-import NavBar from '../Components/Common/NavBar'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import NavBar from "../Components/Common/NavBar";
+import { Outlet } from "react-router-dom";
 
 function Home() {
   return (
-    <div className='w-full min-h-screen px-4 md:px-10 bg-[#ded7e0] text-slate-900 dark:bg-[#0C0F13] dark:text-[#F1F1F1] pb-8'>
-        <div className='container mx-auto'>
-          <NavBar />
-          <Outlet />
-        </div>
+    <div className="relative w-full min-h-screen px-4 md:px-10 pb-10">
+      <div className="pointer-events-none absolute top-24 -left-20 h-72 w-72 rounded-full bg-[var(--accent-soft)] blur-3xl" />
+      <div className="pointer-events-none absolute top-[28rem] right-0 h-72 w-72 rounded-full bg-cyan-200/20 dark:bg-cyan-500/10 blur-3xl" />
+      <div className="relative max-w-6xl mx-auto">
+        <NavBar />
+        <Outlet />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

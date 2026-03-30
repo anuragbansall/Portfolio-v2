@@ -7,42 +7,47 @@ import { IoMdMailUnread } from "react-icons/io";
 import SocialCard from "../Common/SocialCard";
 
 function SocialIconsContainer() {
-
-    const socialIconsPngs = [
-        {
-        label: <FaLinkedin />,
-        link: 'https://www.linkedin.com/in/anuragbansall',
-        color: "#0077B5"
-        },
-        {
-        label: <IoMdMailUnread />        ,
-        link: 'mailto:anuragbansalwork@gmail.com',
-        color: "#D44638"
-        },
-        {
-        label: <FaGithub />,
-        link: 'https://github.com/anuragbansall',
-        color: "#DADADA"
-        },
-        {
-        label: <SiHackerrank />,
-        link: 'https://www.hackerrank.com/devanuragbansal',
-        color: "#2EC866"
-        },
-        {
-        label: <SiLeetcode />,
-        link: 'https://leetcode.com/anuragbansall',
-        color: "#F8C300"
-        },
-    ]
+  const socialIconsPngs = [
+    {
+      label: <FaLinkedin />,
+      title: "LinkedIn",
+      link: "https://www.linkedin.com/in/anuragbansall",
+      color: "#0077B5",
+    },
+    {
+      label: <IoMdMailUnread />,
+      title: "Email",
+      link: "mailto:anuragbansalwork@gmail.com",
+      color: "#D44638",
+    },
+    {
+      label: <FaGithub />,
+      title: "GitHub",
+      link: "https://github.com/anuragbansall",
+      color: "#DADADA",
+    },
+    {
+      label: <SiHackerrank />,
+      title: "HackerRank",
+      link: "https://www.hackerrank.com/devanuragbansal",
+      color: "#2EC866",
+    },
+    {
+      label: <SiLeetcode />,
+      title: "LeetCode",
+      link: "https://leetcode.com/anuragbansall",
+      color: "#F8C300",
+    },
+  ];
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-4 place-items-center">
+    <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(7.2rem,1fr))] gap-3 place-items-center">
       {socialIconsPngs.map((item, index) => (
         <SocialCard
           key={index}
           link={item.link}
           label={item.label}
+          title={item.title}
         />
       ))}
     </div>

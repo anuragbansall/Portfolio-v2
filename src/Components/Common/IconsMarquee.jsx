@@ -2,10 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import IconBox from "./IconBox";
 
-function IconsMarquee({iconsPngs}) {
-  
+function IconsMarquee({ iconsPngs }) {
   return (
-    <div className="h-full w-full flex items-center">
+    <div className="h-full w-full flex items-center overflow-hidden">
       <motion.div
         className="flex flex-shrink-0 gap-8 pr-8"
         initial={{ x: 0 }}
@@ -13,11 +12,7 @@ function IconsMarquee({iconsPngs}) {
         transition={{ duration: 10, ease: "linear", repeat: Infinity }}
       >
         {iconsPngs.map((item, index) => (
-          <IconBox 
-            icon={item.icon}
-            label={item.label}
-            key={index}
-          />
+          <IconBox icon={item.icon} label={item.label} key={index} />
         ))}
       </motion.div>
       <motion.div
@@ -27,11 +22,7 @@ function IconsMarquee({iconsPngs}) {
         transition={{ duration: 10, ease: "linear", repeat: Infinity }}
       >
         {iconsPngs.map((item, index) => (
-          <IconBox 
-            icon={item.icon}
-            label={item.label}
-            key={index}
-          />
+          <IconBox icon={item.icon} label={item.label} key={index} />
         ))}
       </motion.div>
     </div>

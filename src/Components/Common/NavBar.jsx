@@ -1,39 +1,64 @@
-import React from 'react'
-import { NavLink } from "react-router-dom"
-import {useThemeContext} from "../../context/ThemeContext"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useThemeContext } from "../../context/ThemeContext";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 function NavBar() {
+  const { theme, toggleTheme } = useThemeContext();
 
-    const {theme} = useThemeContext()
+  const navItems = [
+    {
+      path: "/",
+      label: "Overview",
+    },
+    {
+      path: "/about",
+      label: "About",
+    },
+    {
+      path: "/work",
+      label: "Projects",
+    },
+  ];
 
   return (
-    <div className='w-full flex justify-center items-center py-10 sm:py-16'>
-        <div className='flex items-center gap-2 sm:gap-4 w-fit p-2 border dark:border-[#373D43] border-[#EEEEEE] rounded-full bg-[#EAEAEC] dark:bg-[#101215]'>
-            {
-                [{
-                    path: "/",
-                    label: "All"
-                },
-                {
-                    path: "/about",
-                    label: "About"
-                },
-                {
-                    path: "/work",
-                    label: "Work"
-                },
-            ].map((el, idx) => (
-                    <NavLink to={el.path} key={idx} className='rounded-full py-1 px-4 sm:px-8' style={(e) => (
-                        e.isActive ? {
-                            backgroundColor: `${theme === 'dark' ? "#2A2F35" : "#DADADA"}`,
-                            border: `${theme === 'dark' ? "2px solid #373D43" : "2px solid #EEEEEE"}`,
-                        } : {border: "2px solid transparent",}
-                    )}>{el.label}</NavLink>
-                ))
-            }
+    <div className="sticky top-4 z-30 w-full py-6 md:py-8">
+      <div className="w-full rounded-2xl border border-[var(--line)] bg-[var(--surface)] backdrop-blur-xl px-3 md:px-6 py-3 flex items-center justify-between gap-3 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-xl bg-[var(--accent-soft)] text-[var(--accent)] font-semibold flex items-center justify-center">
+            AB
+          </div>
+          <div>
+            <p className="text-xs text-[var(--muted)]">Portfolio</p>
+            <p className="text-sm md:text-base font-semibold">Anurag Bansal</p>
+          </div>
         </div>
+
+        <div className="flex items-center gap-1 md:gap-2">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                `hidden md:block px-3 md:px-5 py-2 rounded-xl text-sm md:text-base transition-all duration-200 border ${isActive ? "bg-[var(--surface-strong)] border-[var(--line)] shadow-sm" : "border-transparent hover:border-[var(--line)] text-[var(--muted)] hover:text-[var(--text)]"}`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="ml-1 md:ml-2 h-10 w-10 rounded-xl border border-[var(--line)] bg-[var(--surface-strong)] flex items-center justify-center text-lg hover:scale-95 transition-transform"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <FiSun /> : <FiMoon />}
+          </button>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

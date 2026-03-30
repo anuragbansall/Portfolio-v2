@@ -1,4 +1,3 @@
-import React from "react";
 import WorkCard from "./WorkCard";
 
 function WorkContainer() {
@@ -137,18 +136,23 @@ function WorkContainer() {
   ];
 
   return (
-    <div className="columns-[30rem] column-gap">
-      {workData.map((item, index) => (
-        <WorkCard
-          image={item.image}
-          link={item.link}
-          title={item.title}
-          tags={item.tags}
-          description={item.description}
-          key={index}
-          index={index}
-        />
-      ))}
+    <div className="w-full flex flex-col gap-8 md:gap-10">
+      <section>
+        <h3 className="text-xl md:text-2xl font-semibold mb-5">Projects</h3>
+        <div className="columns-[22rem] md:columns-[28rem] gap-5">
+          {workData.map((item, index) => (
+            <WorkCard
+              image={item.image}
+              link={item.link}
+              title={item.title}
+              tags={item.tags}
+              description={item.description}
+              key={item.title}
+              index={index}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
