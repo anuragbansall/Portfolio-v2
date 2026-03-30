@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FiHeadphones, FiPause, FiPlay } from "react-icons/fi";
+import { useThemeContext } from "../../context/ThemeContext";
 
 function NowPlaying({
   song = "Blinding Lights",
@@ -8,6 +9,7 @@ function NowPlaying({
   audioSrc = "/now-playing.mp3",
   className = "",
 }) {
+  const { theme } = useThemeContext();
   const [playing, setPlaying] = useState(isPlaying);
   const audioRef = useRef(null);
 
@@ -51,24 +53,24 @@ function NowPlaying({
 
   const title = playing ? song : "Not Playing";
   const subtitle = playing ? artist : "Tap play to listen";
-  const containerTone = playing
-    ? "border-cyan-300/35 bg-gradient-to-r from-cyan-500/20 via-sky-400/15 to-emerald-400/20 shadow-[0_0_0_1px_rgba(125,211,252,0.15),0_12px_30px_-12px_rgba(34,211,238,0.8)]"
-    : "border-white/10 bg-white/5";
 
   return (
     <div
-      className={`group relative hidden lg:flex h-9 items-center gap-2.5 rounded-full border px-3 py-5 text-sm backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/10 ${containerTone} ${className} ${!playing ? "animate-pulse" : ""}`}
+      className={`group relative hidden lg:flex h-9 items-center gap-2.5 rounded-full border px-3 py-5 text-sm text-[var(--text)] backdrop-blur-md transition-all duration-300 ${theme === "dark" ? "hover:border-white/25 hover:bg-white/10" : "hover:border-[var(--accent)]/40 hover:bg-[var(--surface-strong)]"} ${playing ? (theme === "dark" ? "border-cyan-300/35 bg-gradient-to-r from-cyan-500/20 via-sky-400/15 to-emerald-400/20 shadow-[0_0_0_1px_rgba(125,211,252,0.15),0_12px_30px_-12px_rgba(34,211,238,0.8)]" : "border-[var(--accent)]/45 bg-[var(--accent-soft)] shadow-[0_0_0_1px_rgba(0,0,0,0.03),0_10px_24px_-14px_rgba(0,0,0,0.35)]") : "border-[var(--line)] bg-[var(--surface)]"} ${className} ${!playing ? "animate-pulse" : ""}`}
       role="status"
       aria-live="polite"
     >
-      <div className="flex items-center gap-2 text-gray-300">
+      <div className="flex items-center gap-2 text-[var(--muted)]">
         <div
-          className={`relative flex h-5 w-5 items-center justify-center transition-colors duration-300 ${playing ? "text-cyan-200" : "text-white/80"}`}
+          className={`relative flex h-5 w-5 items-center justify-center transition-colors duration-300 ${playing ? (theme === "dark" ? "text-cyan-200" : "text-[var(--accent)]") : "text-[var(--muted)]"}`}
         >
           <FiHeadphones size={14} className={playing ? "animate-pulse" : ""} />
         </div>
 
-        <div className="flex h-3 items-end gap-0.5" aria-hidden="true">
+        <div
+          className={`flex h-3 items-end gap-0.5 ${playing ? (theme === "dark" ? "text-cyan-200/85" : "text-[var(--accent)]/80") : "text-[var(--muted)]"}`}
+          aria-hidden="true"
+        >
           <svg
             height="100%"
             viewBox="0 0 60 40"
@@ -78,8 +80,9 @@ function NowPlaying({
             <style>
               {`
           .bar {
-            fill: #9ca3af;
+            fill: currentColor;
             animation: ${playing ? "bounce 1s infinite ease-in-out" : "none"};
+            transform-origin: center;
           }
 
           .bar:nth-child(1) { animation-delay: 0s; }
@@ -102,14 +105,18 @@ function NowPlaying({
       </div>
 
       <div className="min-w-0 leading-none">
-        <p className="truncate text-[13px] font-medium text-white">{title}</p>
-        <p className="truncate pt-1 text-[11px] text-gray-300/75">{subtitle}</p>
+        <p className="truncate text-[13px] font-medium text-[var(--text)]">
+          {title}
+        </p>
+        <p className="truncate pt-1 text-[11px] text-[var(--muted)]">
+          {subtitle}
+        </p>
       </div>
 
       <button
         type="button"
         onClick={togglePlayback}
-        className={`ml-1 grid h-6 w-6 shrink-0 place-items-center rounded-full border text-xs transition-all duration-300 ${playing ? "border-cyan-200/60 bg-cyan-100/15 text-cyan-100 hover:bg-cyan-100/20" : "border-white/20 bg-white/5 text-white/90 hover:bg-white/15"}`}
+        className={`ml-1 grid h-6 w-6 shrink-0 place-items-center rounded-full border text-xs transition-all duration-300 ${playing ? (theme === "dark" ? "border-cyan-200/60 bg-cyan-100/15 text-cyan-100 hover:bg-cyan-100/20" : "border-[var(--accent)]/55 bg-[var(--accent-soft)] text-[var(--accent)] hover:brightness-95") : "border-[var(--line)] bg-[var(--surface-strong)] text-[var(--text)] hover:bg-[var(--surface)]"}`}
         aria-label={
           playing ? "Pause now playing track" : "Play now playing track"
         }
