@@ -6,6 +6,17 @@ import { SiLeetcode } from "react-icons/si";
 import { IoMdMailUnread } from "react-icons/io";
 import SocialCard from "../Common/SocialCard";
 import { FaXTwitter } from "react-icons/fa6";
+import { useSortable } from "@dnd-kit/react/sortable";
+
+function Sortable({ id, index, children }) {
+  const { ref } = useSortable({ id, index });
+
+  return (
+    <div ref={ref} className="item w-full h-full relative">
+      {children}
+    </div>
+  );
+}
 
 function SocialIconsContainer() {
   const socialIconsPngs = [
@@ -50,12 +61,15 @@ function SocialIconsContainer() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(7.2rem,1fr))] gap-3 place-items-center">
       {socialIconsPngs.map((item, index) => (
-        <SocialCard
-          key={index}
-          link={item.link}
-          label={item.label}
-          title={item.title}
-        />
+        <Sortable key={index} id={index} index={index}>
+          <SocialCard
+            key={index}
+            link={item.link}
+            label={item.label}
+            title={item.title}
+            color={item.color}
+          />
+        </Sortable>
       ))}
     </div>
   );
