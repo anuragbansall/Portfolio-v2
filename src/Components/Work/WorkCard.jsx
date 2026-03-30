@@ -26,6 +26,10 @@ function WorkCard({
             src={image}
             alt={title}
             className="max-w-full max-h-[20rem] object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/Image_not_available.png";
+            }}
           />
         </div>
 

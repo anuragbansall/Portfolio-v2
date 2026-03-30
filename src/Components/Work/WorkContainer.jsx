@@ -3,135 +3,120 @@ import WorkCard from "./WorkCard";
 function WorkContainer() {
   const workData = [
     {
-      title: "macOS Web Version",
+      title: "Defund – Decentralized Crowdfunding Platform",
       image:
-        "https://github.com/anuragbansall/macos-web/blob/main/public/Product.png?raw=true",
-      link: "https://macos-web-online.vercel.app/",
+        "https://github.com/anuragbansall/Defund/raw/main/client/public/demo/dashboard.png",
       description:
-        "A clean and interactive macOS desktop experience built with React. Features a draggable dock, window system, and smooth UI animations — all in the browser.",
-      tags: ["React.js", "Tailwind CSS"],
+        "A non-custodial crowdfunding platform built on Ethereum (Sepolia testnet) that enables users to create and fund campaigns transparently on-chain. Integrates MetaMask for secure wallet interactions and eliminates intermediaries by sending funds directly to campaign owners. Includes an AI-powered helper to enhance campaign titles and descriptions for better impact.",
+      tags: [
+        "React.js",
+        "Solidity",
+        "Ethereum",
+        "Web3",
+        "MetaMask",
+        "Sepolia Testnet",
+        "AI",
+      ],
+      link: "https://defund.vercel.app/",
     },
     {
-      title: "Urnote",
-      image:
-        "https://github.com/anuragbansall/urnote/blob/main/frontend/Screenshot%202025-06-25%20185127.png?raw=true",
-      link: "https://urnote.vercel.app/",
+      title: "Blendify – Real-Time Image Editor",
+      image: "https://i.ibb.co/CsYxkRBF/Screenshot-2026-03-30-215625.png",
       description:
-        "UrNote is a smart web app to write, store, and enhance your notes using AI. Organize ideas, expand thoughts, and get AI suggestions—all in one place.",
+        "A browser-based image editor that enables real-time visual adjustments using intuitive controls. Users can modify brightness, contrast, saturation, and more with instant feedback, all powered by client-side processing with no backend required. Includes seamless image export functionality.",
+      tags: ["React.js", "HTML5", "CSS3", "Canvas API"],
+      link: "https://blendify-delta.vercel.app/",
+    },
+    {
+      title: "Kensaku – RAG-Powered AI Chat App",
+      image: "https://i.ibb.co/GvStsK01/Screenshot-2026-03-30-220441.png",
+      description:
+        "An AI chat application built using Retrieval-Augmented Generation (RAG) to deliver accurate, context-aware responses. It enhances traditional LLM outputs by retrieving relevant external knowledge, reducing hallucinations and improving answer reliability. Designed with a clean chat interface for seamless user interaction.",
+      tags: ["React.js", "Node.js", "RAG", "LLM", "AI", "MongoDB"],
+      link: "https://chat-gpt-online-ai.vercel.app/",
+    },
+    {
+      title: "Fokus – Influencer Brand UI Experience",
+      image: "https://i.ibb.co/qF4MBgYY/Screenshot-2026-03-30-220548.png",
+      description:
+        "A modern, high-conversion UI design inspired by the Fokus drink brand by Triggered Insaan. Built as part of an influencer hackathon, the project focuses on creating an engaging, visually rich product experience with smooth interactions, responsive layouts, and a strong brand identity using React and Tailwind CSS.",
       tags: [
         "React.js",
         "Tailwind CSS",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Gemini",
+        "UI/UX",
+        "Responsive Design",
+        "Frontend Development",
       ],
+      link: "https://fokus-energy.vercel.app/",
     },
     {
-      title: "ScreenVerse",
-      image:
-        "https://github.com/anuragbansall/ScreenVerse/raw/main/public/product.png",
-      link: "https://screen-verse.vercel.app//",
+      title: "macOS Web – OS Simulator in Browser",
+      image: "https://i.ibb.co/pBgFzMQv/Screenshot-2026-03-30-220714.png",
       description:
-        "ScreenVerse allows users to discover the latest popular and trending movies and TV series. Users can view detailed information, such as descriptions, trailers, where the content is available for streaming, and much more. Additionally, users can explore detailed profiles of their favorite celebrities.",
-      tags: ["React.js", "Tailwind CSS", "Redux Toolkit"],
+        "A macOS-inspired web application that simulates a real desktop operating system experience directly in the browser. Features draggable windows, a dynamic dock, and smooth UI interactions to replicate native macOS behavior using modern frontend technologies.",
+      tags: [
+        "React.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "UI/UX",
+        "Frontend Development",
+      ],
+      link: "https://macos-web-online.vercel.app/",
     },
     {
-      title: "Sheryinas DSA Tracker",
-      image:
-        "https://github.com/anuragbansall/Sheryians-DSA-Tracker/blob/main/public/Product.png?raw=true",
-      link: "https://sheryians-dsa-tracker.vercel.app/",
-      description:
-        "A web-based DSA sheet focused on JavaScript. View curated questions and solve them directly in the built-in browser code editor—no setup needed.",
-      tags: ["React.js", "Tailwind CSS"],
-    },
-    {
-      title: "Crispify",
-      image:
-        "https://github.com/anuragbansall/Crispify/blob/main/Product.png?raw=true",
-      link: "https://crispify.vercel.app/",
-      description:
-        "Crispify is a simple web app that uses AI to unblur and enhance low-quality images. Just upload your image, and let AI bring out the details",
-      tags: ["React.js", "Tailwind CSS"],
-    },
-    {
-      title: "RapidChat",
-      image:
-        "https://github.com/anuragbansall/RapidChat/blob/main/frontend/Product.png?raw=true",
-      link: "https://rapidchat-1.onrender.com/",
-      description:
-        "RapidChat is a web-based real-time chat app that lets users send and receive messages instantly. Built for speed, simplicity, and smooth communication.",
-      tags: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    },
-    {
-      title: "FloatDocs",
+      title: "FloatDocs – Draggable Notes App",
       image:
         "https://github.com/anuragbansall/FloatDocs/raw/main/public/product-demo.png",
+      description:
+        "A minimalist note-taking application where users can create and manage sticky notes with smooth drag-and-drop interactions. Built with a focus on fluid UI experience, allowing users to freely position notes across the canvas using performant animations.",
+      tags: [
+        "React.js",
+        "Framer Motion",
+        "Drag & Drop",
+        "UI/UX",
+        "Frontend Development",
+      ],
       link: "https://float-docs.vercel.app/",
-      description:
-        "FloatDocs is an innovative task management tool that reimagines the traditional to-do list. Each task is represented as a sticky note, which can be freely dragged and placed anywhere on the screen. This dynamic interface provides an interactive and visually engaging way to organize and manage your tasks.",
-      tags: ["React.js", "Tailwind CSS", "Framer Motion"],
     },
     {
-      title: "Drawit",
-      image: "https://github.com/anuragbansall/Drawit/raw/main/assets/Demo.png",
-      link: "https://drawit-online.vercel.app/",
-      description:
-        "Drawit is an interactive whiteboard drawing app that lets users draw, erase, and customize their artwork with different pencil sizes and colors. It's designed for creative expression and offers a simple, user-friendly interface.",
-      tags: ["HTML", "CSS", "JavaScript"],
-    },
-    {
-      title: "Shopping Web App",
+      title: "ScreenVerse – Movies & TV Discovery App",
       image:
-        "https://github.com/anuragbansall/React-Shopping-Web-App/raw/main/public/product.png",
-      link: "https://react-shopping-web-app.vercel.app/",
+        "https://github.com/anuragbansall/ScreenVerse/raw/main/public/product.png",
       description:
-        "This project is a basic e-commerce web application built with React.js and Tailwind CSS. It showcases product data in cards, allowing users to view details, add, delete, and edit products, with all data stored locally.",
-      tags: ["React.js", "Tailwind CSS"],
+        "A content discovery platform that helps users explore trending movies and TV shows in real time. Integrates with the IMDb API to fetch up-to-date data, featuring search, filtering, and categorized browsing with a clean and responsive UI.",
+      tags: [
+        "React.js",
+        "Vanilla CSS",
+        "REST API",
+        "IMDb API",
+        "Frontend Development",
+      ],
+      link: "https://screen-verse.vercel.app/",
     },
     {
-      title: "Typing Test Online",
-      image:
-        "https://github.com/anuragbansall/Typing-Test-Online/raw/main/assets/TypingTestWeb.png",
-      link: "https://typing-test-online.vercel.app/",
+      title: "Quizly – AI Quiz Generator",
+      image: "/images/quizly.png",
       description:
-        "This website allows users to test and improve their typing speed by typing a given random paragraph. Upon completion, users can analyze their performance by viewing their words per minute (WPM).",
-      tags: ["HTML", "CSS", "JavaScript"],
+        "A mobile app that generates multiple-choice quizzes instantly based on any user-provided topic. Leverages AI to create dynamic questions on demand, offering an interactive and engaging learning experience on the go.",
+      tags: ["React Native", "Expo", "AI", "Mobile App", "JavaScript"],
+      link: "https://github.com/anuragbansall/Quizly",
     },
+
     {
-      title: "LiveCoderr",
-      image: "https://i.ibb.co/0twqmw4/livecoderr.png",
-      link: "https://livecoderr.vercel.app/",
+      title: "DeCare – Decentralized Healthcare Records",
+      image: "https://i.ibb.co/M5g6r2Qy/Screenshot-2026-03-30-220913.png",
       description:
-        "An innovative online platform enabling users to code HTML, CSS, and JavaScript in real-time and visualize the output instantly.",
-      tags: ["HTML", "CSS", "JavaScript"],
-    },
-    {
-      title: "Refokus - UI Clone",
-      image:
-        "https://github.com/anuragbansall/Refokus-UI-Clone/raw/main/public/product.png",
-      link: "https://refokus-ui-clone-three.vercel.app/",
-      description:
-        "This project is a responsive website built with React.js and Tailwind CSS, featuring smooth animations powered by Framer Motion. The goal was to create an engaging user experience with seamless transitions and modern design practices. It was a rewarding experience to bring this project to life.",
-      tags: ["React.js", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-      title: "Music Card Favorites",
-      image:
-        "https://github.com/anuragbansall/Music-Card-Favorites/raw/main/public/product.png",
-      link: "https://music-card-favorites.vercel.app/",
-      description:
-        "A simple React.js project styled with Tailwind CSS, featuring music cards where users can add tracks to their favorites and see the favorite count increase with each click.",
-      tags: ["React.js", "Tailwind CSS"],
-    },
-    {
-      title: "Random User Card Generator",
-      image:
-        "https://github.com/anuragbansall/Random-User-Card/raw/main/assets/product.png",
-      link: "https://random-user-card-alpha.vercel.app/",
-      description:
-        "This project is a simple web application that generates a random user data card with just a click of a button. The user data includes details like name, email, gender, and more, displayed in a user-friendly card format.",
-      tags: ["React.js", "Tailwind CSS", "Framer Motion"],
+        "A decentralized healthcare application that enables secure collaboration between patients and providers using tamper-evident medical records. Built on a minimal and auditable Solidity smart contract, with a clean React + Vite + Tailwind UI and ethers v6 for seamless wallet and contract interactions.",
+      tags: [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Solidity",
+        "Ethereum",
+        "Ethers.js",
+        "Web3",
+      ],
+      link: "https://decare-ten.vercel.app",
     },
   ];
 
