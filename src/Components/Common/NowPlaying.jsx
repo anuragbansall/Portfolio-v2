@@ -57,7 +57,7 @@ function NowPlaying({
 
   return (
     <div
-      className={`group relative hidden lg:flex h-9 items-center gap-2.5 rounded-full border px-3 py-5 text-sm backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/10 ${containerTone} ${className}`.trim()}
+      className={`group relative hidden lg:flex h-9 items-center gap-2.5 rounded-full border px-3 py-5 text-sm backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/10 ${containerTone} ${className} ${!playing ? "animate-pulse" : ""}`}
       role="status"
       aria-live="polite"
     >
@@ -67,16 +67,37 @@ function NowPlaying({
         >
           <FiHeadphones size={14} className={playing ? "animate-pulse" : ""} />
         </div>
+
         <div className="flex h-3 items-end gap-0.5" aria-hidden="true">
-          <span
-            className={`w-0.5 rounded-full ${playing ? "bg-cyan-200 animate-pulse [animation-duration:1.1s]" : "h-1.5 bg-white/45"}`}
-          />
-          <span
-            className={`w-0.5 rounded-full ${playing ? "bg-sky-200 animate-pulse [animation-duration:1.4s] [animation-delay:120ms]" : "h-2 bg-white/35"}`}
-          />
-          <span
-            className={`w-0.5 rounded-full ${playing ? "bg-emerald-200 animate-pulse [animation-duration:1.2s] [animation-delay:240ms]" : "h-1 bg-white/30"}`}
-          />
+          <svg
+            height="100%"
+            viewBox="0 0 60 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              {`
+          .bar {
+            fill: #9ca3af;
+            animation: ${playing ? "bounce 1s infinite ease-in-out" : "none"};
+          }
+
+          .bar:nth-child(1) { animation-delay: 0s; }
+          .bar:nth-child(2) { animation-delay: 0.2s; }
+          .bar:nth-child(3) { animation-delay: 0.4s; }
+
+          @keyframes bounce {
+            0%, 100% { transform: scaleY(0.4); }
+            50% { transform: scaleY(1); }
+          }
+        `}
+            </style>
+
+            {/* Bars */}
+            <rect className="bar" x="5" y="5" width="8" height="30" rx="4" />
+            <rect className="bar" x="20" y="5" width="8" height="30" rx="4" />
+            <rect className="bar" x="35" y="10" width="8" height="20" rx="4" />
+          </svg>
         </div>
       </div>
 
