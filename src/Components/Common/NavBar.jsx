@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useThemeContext } from "../../context/ThemeContext";
 import { FiMoon, FiSun } from "react-icons/fi";
+import NowPlaying from "./NowPlaying";
 
 function NavBar() {
   const { theme, toggleTheme } = useThemeContext();
@@ -46,6 +47,12 @@ function NavBar() {
               {item.label}
             </NavLink>
           ))}
+
+          <NowPlaying
+            song="Naal Nachna"
+            artist="Afsana Khan"
+            audioSrc="/now-playing.mp3"
+          />
 
           <button
             type="button"
