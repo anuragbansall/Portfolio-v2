@@ -58,7 +58,11 @@ function AboutMe() {
           </div>
         </div>
 
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+        {/* GitHub Contribution Grid */}
+        <div
+          style={{ marginTop: "2rem", textAlign: "center" }}
+          className="hidden md:block"
+        >
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
