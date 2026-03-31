@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
 function WorkCard({
@@ -12,14 +11,10 @@ function WorkCard({
   featured = false,
 }) {
   return (
-    <div className="relative h-full w-full overflow-hidden mb-5 break-inside-avoid">
-      <motion.div
-        className={`h-full w-full border border-[var(--line)] bg-[var(--surface)] px-4 md:px-6 py-4 md:py-5 rounded-3xl cursor-pointer duration-200 group relative hover:-translate-y-1 ${featured ? "shadow-[0_20px_40px_rgba(0,0,0,0.08)]" : ""}`}
+    <div className="relative z-1 h-full w-full overflow-hidden mb-5 break-inside-avoid">
+      <div
+        className={`h-full overflow-hidden w-full border border-[var(--line)] bg-[var(--surface)] px-4 md:px-6 py-4 md:py-5 rounded-3xl cursor-pointer duration-200 group relative hover:-translate-y-1 ${featured ? "shadow-[0_20px_40px_rgba(0,0,0,0.08)]" : ""}`}
         onClick={() => window.open(link, "_blank")}
-        initial={{ x: index % 2 ? "50%" : "-50%", opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="w-full overflow-hidden flex justify-center items-center rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] min-h-52">
           <img
@@ -58,9 +53,10 @@ function WorkCard({
             ))}
           </div>
 
-          <div className="absolute left-1/2 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent w-0 group-hover:w-full transform -translate-x-1/2 transition-all duration-300" />
+          {/* Lighting Effect */}
+          <div className="absolute bottom-0 left-0 w-full h-0 group-hover:h-full bg-gradient-to-t from-[var(--accent-soft)] dark:from-[var(--line)] to-transparent -z-10 transition-all duration-500"></div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
