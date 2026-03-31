@@ -3,7 +3,7 @@ import IconBox from "./IconBox";
 
 function IconsContainer({ iconsPngs }) {
   return (
-    <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(6rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-4 place-items-center">
+    <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(5rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(6rem,1fr))] gap-4 place-items-center">
       {iconsPngs.map((item, index) => (
         <div key={index} className="flex flex-col items-center gap-2">
           <IconBox icon={item.icon} label={item.label} />

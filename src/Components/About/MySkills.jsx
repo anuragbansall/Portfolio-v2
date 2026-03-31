@@ -17,23 +17,59 @@ import framermotion from "../../assets/Languages-Icons/framermotion.png";
 import python from "../../assets/Languages-Icons/python.png";
 import nodejs from "../../assets/Languages-Icons/node-js.png";
 import expressjs from "../../assets/Languages-Icons/express-js.png";
+import java from "../../assets/Languages-Icons/java.png";
+import solidity from "../../assets/Languages-Icons/solidity.png";
+import vscode from "../../assets/Languages-Icons/vscode.png";
+import figma from "../../assets/Languages-Icons/figma.png";
+import typescript from "../../assets/Languages-Icons/typescript.png";
+import reactnative from "../../assets/Languages-Icons/reactnative.png";
+import mongoDB from "../../assets/Languages-Icons/mongodb.png";
 
-const iconsPngs = [
-  { label: "HTML", icon: html },
-  { label: "CSS", icon: css },
-  { label: "JavaScript", icon: js },
-  { label: "React", icon: reactjs },
-  { label: "Node.js", icon: nodejs },
-  { label: "Express.js", icon: expressjs },
-  { label: "Tailwind CSS", icon: tailwindcss },
-  { label: "Firebase", icon: firebase },
-  { label: "SQL", icon: sql },
-  { label: "C++", icon: cpp },
-  { label: "Github", icon: github },
-  { label: "Git", icon: git },
-  { label: "Python", icon: python },
-  { label: "Framer Motion", icon: framermotion },
+const categorizedSkills = [
+  {
+    category: "Frontend Development",
+    skills: [
+      { label: "HTML", icon: html },
+      { label: "CSS", icon: css },
+      { label: "JavaScript", icon: js },
+      { label: "React.js", icon: reactjs },
+      { label: "Tailwind CSS", icon: tailwindcss },
+      { label: "Framer Motion", icon: framermotion },
+      { label: "TypeScript", icon: typescript },
+      { label: "React Native", icon: reactnative },
+    ],
+  },
+  {
+    category: "Backend Development",
+    skills: [
+      { label: "Node.js", icon: nodejs },
+      { label: "Express.js", icon: expressjs },
+      { label: "MongoDB", icon: mongoDB },
+      { label: "SQL", icon: sql },
+      { label: "Firebase", icon: firebase },
+      { label: "Solidity", icon: solidity },
+    ],
+  },
+  {
+    category: "Version Control & Tools",
+    skills: [
+      { label: "Git", icon: git },
+      { label: "GitHub", icon: github },
+      { label: "VS Code", icon: vscode },
+      { label: "Figma", icon: figma },
+    ],
+  },
+  {
+    category: "Programming Languages",
+    skills: [
+      { label: "Java", icon: java },
+      { label: "C++", icon: cpp },
+      { label: "Python", icon: python },
+    ],
+  },
 ];
+
+const iconsPngs = categorizedSkills.flatMap((group) => group.skills);
 
 function MySkills() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -64,7 +100,17 @@ function MySkills() {
             : { height: 0 }
         }
       >
-        <IconsContainer iconsPngs={iconsPngs} />
+        <div className="space-y-8">
+          {categorizedSkills.map((group) => (
+            <div key={group.category} className="space-y-3 ">
+              <h3 className="text-sm md:text-base font-semibold text-[var(--muted)] mb-6">
+                {group.category}
+              </h3>
+
+              <IconsContainer iconsPngs={group.skills} />
+            </div>
+          ))}
+        </div>
       </motion.div>
 
       <button
