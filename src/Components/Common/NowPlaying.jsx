@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { FiHeadphones, FiPause, FiPlay } from "react-icons/fi";
 
 function NowPlaying({
-  song = "Blinding Lights",
-  artist = "The Weeknd",
+  title = "Unknown Track",
+  subtitle = "Unknown Artist",
   isPlaying = false,
   audioSrc = "/now-playing.mp3",
   className = "",
@@ -48,9 +48,6 @@ function NowPlaying({
       setPlaying(false);
     }
   };
-
-  const title = playing ? song : "Not Playing";
-  const subtitle = playing ? artist : "Tap play to listen";
 
   return (
     <div
@@ -104,10 +101,10 @@ function NowPlaying({
 
       <div className="min-w-0 leading-none">
         <p className="truncate text-[13px] font-medium text-[var(--text)]">
-          {title}
+          {playing ? title : "Not playing"}
         </p>
         <p className="truncate pt-1 text-[11px] text-[var(--muted)]">
-          {subtitle}
+          {playing ? subtitle : "Click to play"}
         </p>
       </div>
 

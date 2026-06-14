@@ -49,8 +49,8 @@ function NavBar() {
           ))}
 
           <NowPlaying
-            song="Naal Nachna"
-            artist="Afsana Khan"
+            title="Coding & Vibing"
+            subtitle="with music on 🎧"
             audioSrc="/now-playing.mp3"
           />
 
